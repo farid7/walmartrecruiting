@@ -36,11 +36,32 @@ FinelineNumber | a more refined category for each of the products, created by Wa
 We used the following methods for this project:
 
 ### Cleaning
-Data was downloaded in csv format, which had 4,129 missin data in columns _Upc_ and _FinelineNumber_.
-First off, the function *clean_colnames* formated all headers of the file (removed empty spaces and simbols),
-then, the function *clean_data* formated string in observation, to lower case. 
-   Used functions are in the -util.R- script.
 ### Exploratory data analysis
+In this part, it is visualized univariate and bivariate fatures of data. 
+I was observed that most of features from raw_data are categorical (_TripType, VisitNumber, Weekday,
+Upc, DepartmentDescription, FinelineNumber_), and just one feature is numerical (_ScanCount_). 
+
+In univariate analysis, it is appreciated that most of _TripType_ either 40 or 39 category; most 
+"busy" days are _sunday_ and _saturday_, and the less "busy" day is _thursday_. 
+
+On the other hand, most purchased items are from _grocery dry foods_ and _dsd grocery_; and the quantity of 
+other purchased items decay exponentially. Similarly, the most purchased item is under the category "5501".
+
+ScanCount feature, is the number of items "purchased", and the top three quantity of items 
+are 1, 2 and -1 (one returned). 
+
+Is is also appreciated that the _VisitNumber_ is repeted in the dataset. It is because, for each item, a ner
+row is generated, with the same _VisitNumber_ id (Only two observation usedmore than 150 items).
+
+Regarding to unique products, most of them have the _Upc_ of 4011.
+
+In bivariate graphs, it seems that _TripType_ is related to the kind of products (if they are consumed
+frequently, for example food and personal care products). Also, on Sundays, the quantity of purchased items
+have more variance. 
+
+
+
+
 ### Imputation
 ### Transform
 ### Feature Engineering
